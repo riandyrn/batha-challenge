@@ -9,7 +9,7 @@ The current design is pretty much sucks. Here you could see it by yourself:
 
 So in this challenge you need to revamp this existing design.
 
-Notice that you need to create email template that look good for both mobile & desktop. Because the majority of our users are coming from mobile & desktop.
+Notice that you need to create **email template that look good for both mobile & desktop**. Because the majority of our users are coming from mobile & desktop.
 
 **The deliverables for this challenge are:**
 
@@ -24,6 +24,11 @@ To test whether your HTML template could work for email or not you need to send 
 
 The credentials to access the email server will be sent to your registered email along with the credentials to access upload server just in case you need to upload some assets for your template.
 
+Here are some good examples for the email template just in case you need them for reference:
+
+- StackOverflow: [Desktop View](so-desktop.jpeg) & [Mobile View](so-mobile.jpeg)
+- Linkedin: [Desktop View](ln-desktop.jpeg) & [Mobile View](ln-mobile.jpeg)
+
 Got any questions? Feel free to email me at riandy@batha.id.
 
-Have fun in the challenge!
+Have fun in the challenge! 😁
