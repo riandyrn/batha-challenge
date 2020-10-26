@@ -1,0 +1,113 @@
+html, body {
+    background-color: whitesmoke;
+}
+
+ul.list>li {
+    margin-bottom: 15px;
+}
+
+.media.listing {
+    align-items: center;
+    justify-content: center;
+}
+
+.listing-tag {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.time-container {
+    align-self: center;
+}
+
+.time-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tags-container-mobile {
+    text-align: center;
+}
+
+.logo-mobile {
+    margin: 0 auto 20px auto;
+}
+
+.content-mobile {
+    text-align: center;
+    overflow: hidden;
+}
+
+.footer {
+    padding-bottom: 3rem;
+}
+
+.my-modal-card-head {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.batha-logo {
+    font-family: monospace;
+
+}
+
+.disable-selection {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+.search-section {
+    padding-bottom: 0;
+}
+
+.modal-card-title {
+    font-size: 1.2rem;
+}
+
+.description-container > ul {
+    list-style-type: disc;
+}
+
+.location {
+    color: #4a4a4a
+}
+
+.modal-card {
+    padding: 0 20px;
+}
+
+.btn-apply-job {
+    margin-top: 2rem;
+}
+
+.search-result-label {
+    margin-bottom: 2.5rem;
+}
+
+[v-cloak] {
+    display:none;
+}
+
+.clock-icon {
+    width: 1rem;
+}
+
+trix-editor {
+    min-height: 25em;
+}
+
+.edit-control-buttons {
+    justify-content: center !important;
+}
+
+.navbar {
+    padding: 5px;
+}

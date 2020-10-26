@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Batha.id - Challenge #1</title>
+    <link rel="stylesheet" href="assets/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div v-cloak id="app">
+        <nav class="navbar" role="navigation" aria-label="main navigation" v-if="state != 'LOGIN_SCREEN'">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="https://batha.id" target="_blank">
+                    <p class="title has-text-centered is-size-5 batha-logo disable-selection">&lt; batha.id &gt;</p>
+                </a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a href="#" class="navbar-item" v-on:click="showSendEmailScreen()">Send Email</a>
+                    <a href="#" class="navbar-item" v-on:click="showUploadFileScreen()">Upload File</a>
+                </div>
+            </div>
+        </nav>
+        <section class="section" v-if="state == 'LOGIN_SCREEN'">
+            <div class="columns">
+                <div class="column is-4 is-offset-4">
+                    <h1 class="is-size-3 has-text-centered has-text-weight-medium">Login</h1>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-content">
+                                <form id="form_login" action="details.html" v-on:submit.prevent="doLogin()">
+                                    <div class="field">
+                                        <label class="label">Your Access Key:</label>
+                                        <div class="control">
+                                            <input id="title" class="input" type="text"
+                                                placeholder="e.g eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." autofocus
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <div class="control">
+                                            <input id="btn_submit" type="submit" class="button is-fullwidth is-link"
+                                                value="Login">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section" v-if="state == 'SEND_EMAIL_SCREEN'">
+            <h1 class="is-size-2 has-text-centered has-text-weight-medium">Create Job</h1>
+            <br>
+            <div class="container">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                            <form id="formCreateNewJob" action="details.html">
+                                <div class="field">
+                                    <label class="label">Job Title</label>
+                                    <div class="control">
+                                        <input id="title" class="input" type="text"
+                                            placeholder="e.g Senior Software Engineer" autofocus>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Job Location</label>
+                                    <div class="control">
+                                        <input id="location" class="input" type="text"
+                                            placeholder="e.g Riyadh, Saudi Arabia">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Company</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select>
+                                                <option>Select dropdown</option>
+                                                <option>Haraj</option>
+                                                <option>AQAR</option>
+                                                <option>Noon</option>
+                                                <option>HungerStation</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Job Description</label>
+                                    <div class="control">
+                                        <input id="body_html" type="hidden">
+                                        <trix-editor input="body_html" placeholder="e.g Awesome job!">
+                                        </trix-editor>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Apply URL</label>
+                                    <div class="control">
+                                        <input id="apply_url" class="input" type="text"
+                                            placeholder="e.g https://stackoverflow.com/jobs/348828/ios-android-mobile-developer-haraj (may empty)">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label class="label">Tags</label>
+                                    <div class="control">
+                                        <input id="tags" class="input" type="text"
+                                            placeholder="e.g Mobile Development, iOS, Flutter (separated by comma)">
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <label class="checkbox">
+                                            <input id="is_featured" type="checkbox"> Is Featured Job?
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <input id="btn_submit" type="submit"
+                                            class="button is-fullwidth is-medium is-link" value="Create Job">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/vue.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
