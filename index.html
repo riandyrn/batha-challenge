@@ -31,6 +31,7 @@
                 </div>
             </div>
         </nav>
+        <!-- Login Screen -->
         <section class="section" v-if="state == 'LOGIN_SCREEN'">
             <div class="columns">
                 <div class="column is-4 is-offset-4">
@@ -61,78 +62,36 @@
                 </div>
             </div>
         </section>
+        <!-- Send Email Screen -->
         <section class="section" v-if="state == 'SEND_EMAIL_SCREEN'">
-            <h1 class="is-size-2 has-text-centered has-text-weight-medium">Create Job</h1>
-            <br>
-            <div class="container">
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content">
-                            <form id="formCreateNewJob" action="details.html">
-                                <div class="field">
-                                    <label class="label">Job Title</label>
-                                    <div class="control">
-                                        <input id="title" class="input" type="text"
-                                            placeholder="e.g Senior Software Engineer" autofocus>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Job Location</label>
-                                    <div class="control">
-                                        <input id="location" class="input" type="text"
-                                            placeholder="e.g Riyadh, Saudi Arabia">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Company</label>
-                                    <div class="control">
-                                        <div class="select is-fullwidth">
-                                            <select>
-                                                <option>Select dropdown</option>
-                                                <option>Haraj</option>
-                                                <option>AQAR</option>
-                                                <option>Noon</option>
-                                                <option>HungerStation</option>
-                                            </select>
+            <div class="columns">
+                <div class="column is-4 is-offset-4">
+                    <h1 class="is-size-3 has-text-centered has-text-weight-medium">Send Test Email</h1>
+                    <p class="has-text-centered">{{ email }}</p>
+                    <br>
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-content">
+                                <div class="content">
+                                    <form id="form_email" action="#" v-on:submit.prevent="doSendEmail()">
+                                        <div class="field">
+                                            <label class="label">Body HTML</label>
+                                            <div class="control">
+                                                <textarea name="body_html" id="body_html" cols="30" rows="10"
+                                                    v-model="send_email_page.body_html" class="textarea"
+                                                    placeholder="e.g &lt;h1&gt;Hello World!&lt;h1&gt;"
+                                                    required></textarea>
+                                            </div>
                                         </div>
-                                    </div>
+                                        <div class="field">
+                                            <div class="control">
+                                                <input id="btn_email" type="submit" class="button is-fullwidth is-link"
+                                                    value="Send Email">
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="field">
-                                    <label class="label">Job Description</label>
-                                    <div class="control">
-                                        <input id="body_html" type="hidden">
-                                        <trix-editor input="body_html" placeholder="e.g Awesome job!">
-                                        </trix-editor>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Apply URL</label>
-                                    <div class="control">
-                                        <input id="apply_url" class="input" type="text"
-                                            placeholder="e.g https://stackoverflow.com/jobs/348828/ios-android-mobile-developer-haraj (may empty)">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <label class="label">Tags</label>
-                                    <div class="control">
-                                        <input id="tags" class="input" type="text"
-                                            placeholder="e.g Mobile Development, iOS, Flutter (separated by comma)">
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <label class="checkbox">
-                                            <input id="is_featured" type="checkbox"> Is Featured Job?
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="control">
-                                        <input id="btn_submit" type="submit"
-                                            class="button is-fullwidth is-medium is-link" value="Create Job">
-                                    </div>
-                                </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
