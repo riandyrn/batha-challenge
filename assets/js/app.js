@@ -17,9 +17,6 @@ var app = new Vue({
         showUploadFileScreen() {
             this.state = "UPLOAD_FILE_SCREEN";
         },
-        showGetUploadedFilesScreen() {
-            this.state = "GET_UPLOADED_FILES_SCREEN";
-        },
         async doLogin() {
             // disable login button
             document.getElementById("btn_login").disabled = true;
@@ -78,6 +75,71 @@ var app = new Vue({
             }
             // enable send email button
             document.getElementById("btn_email").disabled = false;
+        },
+        async doUploadFile() {
+            // clear page
+            upload_progress.innerHTML = "";
+            download_url.innerHTML = "";
+            // disable upload file button
+            btn_upload.disabled = true;
+            file_input.disabled = true;
+            // check whether user already choose file to upload
+            if (file_input.files.length == 0) {
+                return
+            }
+            // get presigned upload url
+            const file = file_input.files[0];
+            const response = await fetch(`${endpointURL}/uploads`, { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + this.access_key
+                },
+                body: JSON.stringify({
+                    name: file.name,
+                    size: file.size,
+                    type: file.type
+                })
+            })
+            // parse upload url
+            const uploadURL = (await response.json()).data.upload_url;
+            // upload file to presigned upload url
+            const uploadResponse = await this.uploadToS3(uploadURL, file, (progress) => {
+                upload_progress.innerHTML = `<b>Upload progress:</b> ${Math.floor(progress * 100)}%`
+            });
+            if (uploadResponse.status == 200) {
+                alert("successfully upload file!");
+                const downloadURL = uploadURL.split("?")[0];
+                download_url.innerHTML = `<b>Download URL:</b><br/><a href="${downloadURL}" target="_blank">${downloadURL}</a>`;
+            } else {
+                console.log(uploadResponse.body);
+                alert("unable to upload file, check console for details");
+            }
+            // clear form
+            form_upload.reset();
+            // enable upload file button
+            btn_upload.disabled = false;
+            file_input.disabled = false;
+        },
+        async uploadToS3(uploadURL, file, onProgress) {
+            return new Promise((resolve) => {
+                const xhr = new XMLHttpRequest();
+                xhr.upload.addEventListener("progress", e => {
+                    if (e.lengthComputable) {
+                        onProgress(e.loaded / e.total);
+                    }
+                })
+                xhr.onreadystatechange = e => {
+                    if (xhr.readyState !== xhr.DONE) {
+                        return
+                    }
+                    resolve({ status: xhr.status, body: xhr.responseText });
+                }
+                xhr.open("PUT", uploadURL, true);
+                xhr.setRequestHeader("x-amz-acl", "public-read");
+                xhr.setRequestHeader("Content-Type", file.type)
+                xhr.send(file);
+            });
         }
     }
 })
