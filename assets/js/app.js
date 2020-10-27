@@ -101,19 +101,28 @@ var app = new Vue({
                     type: file.type
                 })
             })
-            // parse upload url
-            const uploadURL = (await response.json()).data.upload_url;
-            // upload file to presigned upload url
-            const uploadResponse = await this.uploadToS3(uploadURL, file, (progress) => {
-                upload_progress.innerHTML = `<b>Upload progress:</b> ${Math.floor(progress * 100)}%`
-            });
-            if (uploadResponse.status == 200) {
-                alert("successfully upload file!");
-                const downloadURL = uploadURL.split("?")[0];
-                download_url.innerHTML = `<b>Download URL:</b><br/><a href="${downloadURL}" target="_blank">${downloadURL}</a>`;
+            // parse request upload response
+            const respJSON = await response.json();
+            if (response.status == 200) {
+                const uploadURL = respJSON.data.upload_url;
+                // upload file to presigned upload url
+                const uploadResponse = await this.uploadToS3(uploadURL, file, (progress) => {
+                    upload_progress.innerHTML = `<b>Upload progress:</b> ${Math.floor(progress * 100)}%`
+                });
+                if (uploadResponse.status == 200) {
+                    alert("successfully upload file!");
+                    const downloadURL = uploadURL.split("?")[0];
+                    download_url.innerHTML = `<b>Download URL:</b><br/><a href="${downloadURL}" target="_blank">${downloadURL}</a>`;
+                } else {
+                    console.log(uploadResponse.body);
+                    alert("unable to upload file, check console for details");
+                }
             } else {
-                console.log(uploadResponse.body);
-                alert("unable to upload file, check console for details");
+                if (respJSON.message) {
+                    alert(respJSON.message);
+                } else {
+                    alert("Something wrong happened, please try again later");
+                }
             }
             // clear form
             form_upload.reset();
