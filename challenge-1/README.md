@@ -16,13 +16,17 @@ Notice that you need to create **email template that look good for both mobile &
 1. High resolution PNG files for the design itself
 2. HTML & CSS code for the email template
 
+**How to Submit:**
+
+After you finished the challenge, send a zip file containing both deliverables to riandy@batha.id with cc to admin@sanberhub.com.
+
 **Additional Notes:**
 
 The HTML & CSS code for email is slightly different than normal HTML & CSS code. In email, the code must be simple & concise so most likely you cannot use code for ui framework (e.g bootstrap, bulma, etc) in your template.
 
 To test whether your HTML template could work for email or not you need to send actual email to yourself. In order to do that you will need an email server.
 
-The credentials to access the email server will be sent to your registered email along with the credentials to access upload server just in case you need to upload some assets for your template.
+The credentials to access the email server has been sent to your registered email along with the credentials to access upload server just in case you need to upload some assets for your template.
 
 Here are some good examples for the email template just in case you need them for reference:
 
