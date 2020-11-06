@@ -18,7 +18,7 @@ Notice that you need to create **email template that look good for both mobile &
 
 **How to Submit:**
 
-After you finished the challenge, send a zip file containing both deliverables to riandy@batha.id with cc to admin@sanberhub.com.
+After you finished the challenge, send a zip file containing both deliverables to riandy@batha.id with cc to admin@sanberhub.com. The maximum submission time is on Tuesday, November 17, 2020 at 23:59 WIB. 
 
 **Additional Notes:**
 
