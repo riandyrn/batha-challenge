@@ -11,6 +11,9 @@ var app = new Vue({
         }
     },
     methods: {
+        showLoginScreen() {
+            this.state = "LOGIN_SCREEN";
+        },
         showSendEmailScreen() {
             this.state = "SEND_EMAIL_SCREEN";
         },
@@ -20,6 +23,7 @@ var app = new Vue({
         async doLogin() {
             // disable login button
             document.getElementById("btn_login").disabled = true;
+            document.getElementById("access_key").disabled = true;
             // execute http request
             const response = await fetch(`${endpointURL}/sessions`, {
                 method: 'POST',
@@ -39,6 +43,7 @@ var app = new Vue({
                 }
                 // enable login button
                 document.getElementById("btn_login").disabled = false;
+                document.getElementById("access_key").disabled = false;
                 return
             }
             // update email & name values
@@ -50,6 +55,7 @@ var app = new Vue({
         async doSendEmail() {
             // disable send email button
             document.getElementById("btn_email").disabled = true;
+            document.getElementById("body_html").disabled = true;
             // execute http request
             const response = await fetch(`${endpointURL}/emails`, {
                 method: 'POST',
@@ -75,6 +81,7 @@ var app = new Vue({
             }
             // enable send email button
             document.getElementById("btn_email").disabled = false;
+            document.getElementById("body_html").disabled = false;
         },
         async doUploadFile() {
             // clear page
@@ -149,6 +156,28 @@ var app = new Vue({
                 xhr.setRequestHeader("Content-Type", file.type)
                 xhr.send(file);
             });
+        },
+        // parseQueryParams() returns object of query params found in url
+        parseQueryParams() {
+            var tmp = window.location.search.replace(/^\?/g, '').split("&")
+            var queryParams = {}
+            for (var i = 0; i < tmp.length; i++) {
+                var param = tmp[i].split("=")
+                if (param.length !== 2) {
+                    continue
+                }
+                queryParams[param[0]] = param[1]
+            }
+            return queryParams
+        },
+    },
+    mounted() {
+        const queryParams = this.parseQueryParams();
+        if (!queryParams['key']) {
+            this.showLoginScreen();
+            return
         }
+        this.access_key = queryParams['key'];
+        this.doLogin();
     }
 })
