@@ -24,7 +24,7 @@ Disini tenaga ahli dari Indonesia sangat dihargai banget lho. Karena itu sayang 
 
 ## Kriteria Desain
 
-Desain yang dibuat harus match dengan theme yang diusung oleh situs Batha (https://batha.id) saat ini.
+Desain yang dibuat harus match dengan tema yang diusung oleh situs Batha (https://batha.id) saat ini. Jadi kalau kalian mengunjungi situsnya kalian akan dengan mudah menemukan color pallete, typography, styling, dan berbagai aspek desain lainnya untuk menyelesaikan challenge ini.
 
 Kalian diharuskan untuk membuat desain yang terlihat bagus baik di layar mobile maupun desktop. Karena dua media ini yang biasanya digunakan oleh user untuk mengakses Batha.
 
@@ -41,6 +41,14 @@ Kalian bisa melihat newsletter desain untuk StackOverflow disini:
 
 - [Desktop View](so-desktop.jpeg)
 - [Mobile View](so-mobile.jpeg)
+
+Ingat, selain menampilkan informasi loker, desain dari newsletter ini juga harus mengakomodir fungsionalitas berikut:
+
+1. Unsubscribe Newsletter
+2. Visit Batha.id
+3. Leave Feedback
+
+Pada intinya desain yang baru jangan sampai mengurangi fungsionalitas yang sudah ada di Batha Newsletter saat ini.
 
 ## Pengumpulan Tugas
 
