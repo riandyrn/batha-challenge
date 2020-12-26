@@ -10,9 +10,9 @@ Kalian bisa berhasil sampai ke tahap ini karena desain kalian dalam challenge se
 
 ## Overview Challenge
 
-Nah di challenge kali ini tugas kalian adalah mengimplementasikan desain kalian di challenge sebelumnya ke dalam kode html & css yang bisa ditampilkan dengan baik di Gmail baik di desktop dengan menggunakan browser ataupun di mobile dengan menggunakan Gmail app.
+Nah di challenge kali ini tugas kalian adalah mengimplementasikan desain kalian sendiri ke dalam kode html & css yang bisa ditampilkan dengan baik di Gmail.
 
-Nah nggak semua kode html & css bisa ditampilkan dengan baik di Gmail, hanya kode dengan inline styling saja yang bisa ditampilkan dengan baik dan itupun fiturnya cukup terbatas.
+Nah sayangnya nggak semua kode html & css bisa ditampilkan dengan baik di Gmail, hanya kode dengan inline styling saja yang bisa ditampilkan dengan baik dan itupun fiturnya cukup terbatas.
 
 Misalnya kita ingin menampilkan tampilan dengan struktur sebagai berikut:
 
@@ -35,7 +35,7 @@ Dengan menggunakan kode standar html kita bisa membuat tampilan diatas dengan ko
 </html>
 ```
 
-Namun sayangnya styling dari kode diatas tidak akan ditampilkan dengan baik. Hal ini disebabkan karena warna dari `Hello World` tidak akan berubah menjadi hijau seperti yang kita inginkan.
+Tapi sayangnya styling dari kode diatas nggak akan ditampilkan dengan baik. Hal ini disebabkan karena warna dari `Hello World` tidak akan berubah menjadi hijau seperti yang kita inginkan.
 
 Lalu bagaimana supaya styling-nya bekerja? Kita perlu merubah kode diatas menjadi kode berikut:
 
@@ -48,11 +48,16 @@ Lalu bagaimana supaya styling-nya bekerja? Kita perlu merubah kode diatas menjad
 
 Kalian tentu perlu menguji apakah kode html & css kalian berjalan dengan baik atau tidak kan ya?
 
-Nah untuk mengujinya tentu kalian harus bisa mengirim email dalam format html kan ya? Dan untuk melakukan hal ini kalian perlu menggunakan email server.
+Nah untuk mengujinya tentu kalian harus bisa mengirim email dalam format html kan ya? Nah untuk melakukan hal ini kalian perlu menggunakan email server.
 
 Nah kami sudah menyiapkan email server yang bisa kalian gunakan untuk melakukan pengujian kode html ini. Selain untuk mengirimkan email, server ini juga bisa kalian gunakan untuk mengupload assets yang kalian perlukan untuk kode kalian.
 
 Untuk tutorial penggunaan servernya bisa diakses [disini](https://www.dropbox.com/s/9b166vkxhhnx7pu/email_server_tutorial.mov?dl=0).
+
+Setelah kalian berhasil mengirimkan email, tentu kalian perlu melihat apakah email-nya apik atau tidak kan ya? Nah untuk melakukan hal ini kalian bisa menggunakan beberapa rilis dari Gmail berikut ini:
+
+- `Mobile` => Gmail mobile app, boleh kalian menggunakan platform Android maupun iOS.
+- `Desktop` => Gmail web (https://gmail.com) namun diakses dengan menggunakan Google Chrome.
 
 ## Pengumpulan Tugas
 
