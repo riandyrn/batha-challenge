@@ -2,7 +2,7 @@
 
 Selamat atas keberhasilannya dalam melewati Batha Challenge #1!
 
-Kalian bisa berhasil sampai ke tahap ini karena desain kalian dalam challenge sebelumnya sudah sesuai dengan standar kualitas yang kami mau, atau dengan kata lain desain kalian memang keren. 😁
+Kalian bisa berhasil sampai ke tahap ini karena desain kalian dalam challenge sebelumnya sudah sesuai dengan standar kualitas yang kami harapkan, atau dengan kata lain desain kalian memang keren. 😁
 
 - [Overview Challenge](#overview-challenge)
 - [Cara Menguji](#cara-menguji)
