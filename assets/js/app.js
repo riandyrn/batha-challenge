@@ -7,7 +7,7 @@ var app = new Vue({
         email: "",
         name: "",
         send_email_page: {
-            body_html: "<h1>Hello World!</h1>"
+            body_html: `<h1 style="color: green;">Hello World!</h1>\n<img src="https://batha-static.s3-ap-southeast-1.amazonaws.com/logos/stripe.jpeg"/>`
         }
     },
     methods: {
